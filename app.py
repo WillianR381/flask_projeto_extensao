@@ -3,7 +3,8 @@ from flask import Flask
 app = Flask("projeto")
 
 @app.route("/")
-def foi():
-    return "foi"
+def home():
+    return "Homepage"
 
-app.run()
+if __name__ == "__main__":
+    app.run()
