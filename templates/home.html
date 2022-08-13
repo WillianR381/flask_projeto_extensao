@@ -1,12 +1,52 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-</head>
-<body>
-    <p>{{context.msg}}</p>
-</body>
-</html>
+{% extends 'base.html'%}
+
+{% block title %} Homepage {% endblock %}
+
+{% block static %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+
+
+{% block content %} 
+<main class="container">
+
+    <a href="{{ url_for('create_client') }}"><i class="bi bi-plus-square"></i></a>
+
+    <table class="table table-hover">
+
+        <thead>
+            <tr class="table-dark">
+                <th scope="col">ID</th>
+                <th scope="col">Razão Social</th>
+                <th scope="col">CNPJ</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telefone</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            {% for client in data %}
+            <tr>
+                <th >{{client.id}}</th>
+                
+                <th>{{client.razao_social}}</th>
+                
+                <th>{{client.cnpj}}</th>
+
+                <th>{{client.email}}</th>
+
+                <th>{{client.phone}}</th>
+                
+                <th>
+                    <a href="{{ url_for('update_client', id=client.id) }}"><i class="bi bi-pencil-square"></i></a>
+                    <a href="{{ url_for('remove_client', id=client.id) }}"><i class="bi bi-trash-fill"></i></a>
+                </th>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+
+{% endblock %}
