@@ -1,0 +1,24 @@
+:root {
+    --icon-trash-color: #d50000;
+    --header-color-logo: #000;
+    --header-text-logo: #000;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+body{
+    font-size: 16px;
+}
+
+.header-img-logo{
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--header-color-logo) ;
+}
+
+.header-text-logo{
+    color: var(--header-text-logo);
+}

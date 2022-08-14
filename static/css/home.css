@@ -1,0 +1,12 @@
+
+
+.bi-trash-fill, 
+.bi-pencil-square
+{
+    font-size: 2rem;
+}
+
+
+.bi-trash-fill{
+    color: var(--icon-trash-color);
+}
