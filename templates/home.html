@@ -10,9 +10,6 @@
 
 {% block content %} 
 <main >
-    <div class="d-flex mb-2 justify-content-end">
-        <a class="btn btn-dark" href="{{ url_for('create_client') }}">Add Client <i class="bi bi-plus-square"></i></a>
-    </div>
 
     {% with messages = get_flashed_messages() %}
       {% if messages %}
@@ -22,7 +19,11 @@
       {% endif %}
     {% endwith %}
 
-    <table class="table table-hover">
+    <div class="d-flex mb-2 justify-content-end">
+        <a class="btn btn-dark" href="{{ url_for('create_client') }}">Add Client <i class="bi bi-plus-square"></i></a>
+    </div>
+
+    <table class="table table-hover .table-responsive align-middle">
 
         <thead>
             <tr class="table-dark">
@@ -48,7 +49,7 @@
 
                 <th>{{client.phone}}</th>
                 
-                <th>
+                <th class="d-flex justify-content-evenly">
                     <a href="{{ url_for('update_client', id=client.id) }}"><i class="bi bi-pencil-square"></i></a>
                     <a href="{{ url_for('remove_client', id=client.id) }}"><i class="bi bi-trash-fill"></i></a>
                 </th>

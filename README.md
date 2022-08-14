@@ -12,4 +12,7 @@ pip install -r requirements.txt
 python -m flask --debug run
 
 
-## Atualizar pacotes 
+## Caso aparece erro de tabela não encontrada 
+flask shell
+from app import db
+db.create_all()

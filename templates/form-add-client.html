@@ -4,20 +4,20 @@
 
 {% block content %} 
 
-  <form action="{{ url_for('create_client') }}" method=post>
+  <form action="{{ url_for('create_client') }}" method=POST>
     <div class="row mb-4">
       <div class="col">
         <!-- First Name input -->
         <div class="form-outline">
           <label class="form-label" for="input-text-first-name">First name</label>
-          <input class="form-control" type="text" id="input-text-first-name"  />
+          <input class="form-control" type="text" id="input-text-first-name" name="first_name" value="{{form.first_name if form}}" />
         </div>
       </div>
       <div class="col">
         <!-- Last Name input -->
         <div class="form-outline">
           <label class="form-label" for="input-text-last-name">Last name</label>
-          <input class="form-control" type="text" id="input-text-last-name"  />
+          <input class="form-control" type="text" id="input-text-last-name" name="last_name" value="{{form.last_name if form}}" />
         </div>
       </div>
     </div>
@@ -27,14 +27,14 @@
         <!-- Razao Social input -->
         <div class="form-outline ">
           <label class="form-label" for="input-text-razao-social">Razão Social</label>
-          <input class="form-control" type="text" id="input-text-razao-social"  />
+          <input class="form-control" type="text" id="input-text-razao-social" name="razao_social" value="{{form.razao_social if form}}" />
         </div>
       </div>
       <div class="col">
           <!-- CNPJ input -->
           <div class="form-outline ">
             <label class="form-label" for="input-text-cnpj">CNPJ</label>
-            <input class="form-control" type="text" id="input-text-cnpj"  />
+            <input class="form-control" type="text" id="input-text-cnpj" name="cnpj" value="{{form.cnpj if form}}" />
           </div>
       </div>
     </div>
@@ -46,7 +46,7 @@
         <!-- Email input -->
         <div class="form-outline mb-4">
           <label class="form-label" for="input-text-email">Email</label>
-          <input class="form-control" type="email" id="input-text-email"  />
+          <input class="form-control" type="email" id="input-text-email" name="email" value="{{form.email if form}}"  />
         </div>
       </div>
 
@@ -54,7 +54,7 @@
         <!-- Phone input -->
         <div class="form-outline mb-4">
           <label class="form-label" for="input-text-phone">Phone</label>
-          <input class="form-control" type="text" id="input-text-phone" />
+          <input class="form-control" type="text" id="input-text-phone" name="phone" value="{{form.phone if form}}"/>
         </div>
       </div>
     </div>
