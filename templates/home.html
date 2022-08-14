@@ -9,9 +9,18 @@
 
 
 {% block content %} 
-<main class="container">
+<main >
+    <div class="d-flex mb-2 justify-content-end">
+        <a class="btn btn-dark" href="{{ url_for('create_client') }}">Add Client <i class="bi bi-plus-square"></i></a>
+    </div>
 
-    <a href="{{ url_for('create_client') }}"><i class="bi bi-plus-square"></i></a>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flashes alert alert-success" role="alert"">
+          <span>{{ messages[0] }}</li>
+        </div>
+      {% endif %}
+    {% endwith %}
 
     <table class="table table-hover">
 
@@ -31,7 +40,7 @@
             <tr>
                 <th >{{client.id}}</th>
                 
-                <th>{{client.razao_social}}</th>
+                <th> <a href="{{ url_for('update_client', id=client.id) }}">{{client.razao_social}}</a></th>
                 
                 <th>{{client.cnpj}}</th>
 
