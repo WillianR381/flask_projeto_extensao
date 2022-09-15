@@ -12,7 +12,7 @@
 - python -m flask --debug run
 
 
-## Caso aparece erro de tabela não encontrada 
+## Caso aparece erro de tabela não encontrada, digite no terminal
 - flask shell
 - from app import db
 - db.create_all()
