@@ -17,5 +17,3 @@
 - from app import db
 - db.create_all()
 
-## Se não conseguir iniciar o projeto pode me enviar um email
-mynamewra@gmail.com
